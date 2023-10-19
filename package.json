@@ -1,0 +1,16 @@
+{
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "description": "ip adress tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "author": "Erenymo",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
+  }
+}

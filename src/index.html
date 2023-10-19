@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP ADRESS TRACKER</title>
+
+    <!-- Tailwind CSS -->
+    <link href="./index.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Javascript -->
+    <script type="module" defer src="js/controller.js"></script>
+  </head>
+
+  <body class="font-primary">
+    <main class="h-screen">
+      <section
+        class="section--tracker relative h-2/6 bg-gray-600 bg-pattern-desktop bg-cover flex justify-center pt-8"
+      >
+        <div class="text-center flex flex-col gap-8">
+          <h1 class="text-white text-3xl font-medium">IP Address Tracker</h1>
+
+          <div class="overflow-hidden relative">
+            <input
+              type="text"
+              placeholder="Search for any IP address or domain"
+              class="px-6 py-4 w-input rounded-xl text-lg overflow-hidden outline-none text-very-dark-gray"
+            />
+            <button
+              class="search--button h-full absolute right-0 py-4 px-6 bg-black hover:bg-very-dark-gray duration-200 rounded-r-xl"
+            >
+              <img src="images/icon-arrow.svg" alt="icon arrow" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-1/4 p-8 w-5/6 max-w-8xl rounded-3xl shadow-xl bg-white details--container grid grid-cols-4 gap-4"
+        >
+          <div
+            class="detail--ip-address border-r border-dark-gray flex flex-col flex-wrap"
+          >
+            <h4 class="text-dark-gray tracking-wider text-sm font-bold mb-2">
+              IP ADRESS
+            </h4>
+
+            <span class="text-very-dark-gray text-3xl font-bold"
+              >192.212.174.101</span
+            >
+          </div>
+          <div
+            class="detail--location border-r border-dark-gray flex flex-col flex-wrap"
+          >
+            <h4 class="text-dark-gray tracking-wider text-sm font-bold mb-2">
+              LOCATION
+            </h4>
+
+            <span class="text-very-dark-gray text-3xl font-bold"
+              >Brooklyn, NY 10001</span
+            >
+          </div>
+          <div
+            class="detail--timezone border-r border-dark-gray flex flex-col flex-wrap"
+          >
+            <h4 class="text-dark-gray tracking-wider text-sm font-bold mb-2">
+              TIMEZONE
+            </h4>
+
+            <span class="text-very-dark-gray text-3xl font-bold"
+              >UTC-05:00</span
+            >
+          </div>
+          <div class="detail--ISP flex flex-col flex-wrap">
+            <h4 class="text-dark-gray tracking-wider text-sm font-bold mb-2">
+              ISP
+            </h4>
+
+            <span class="text-very-dark-gray text-3xl font-bold"
+              >SpaceX Starlink</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section--map h-4/6 bg-dark-gray"></section>
+    </main>
+  </body>
+</html>
