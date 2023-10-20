@@ -26,15 +26,18 @@ const createMapObject = function (data) {
   });
 };
 
-export const loadMap = async function (ip) {
+export const loadMap = async function (query) {
   try {
-    // Data
-    const response = await fetch(`${API_URL}${API_KEY}&ipAddress=${ip}`);
+    const ipPattern = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
 
-    if (!response.ok) {
-      alert("the search is invalid");
-      return;
-    }
+    // Data
+    const response = await fetch(
+      `${API_URL}${API_KEY}&${
+        ipPattern.test(query) ? "ipAddress" : "domain"
+      }=${query}`
+    );
+
+    if (!response.ok) throw new Error("invalid search");
 
     const data = await response.json();
 
@@ -43,6 +46,6 @@ export const loadMap = async function (ip) {
     state.map = createMapObject(data);
     // console.log(state);
   } catch (err) {
-    console.error(err);
+    throw err;
   }
 };

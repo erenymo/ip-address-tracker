@@ -33,30 +33,39 @@
     <script type="module" defer src="js/controller.js"></script>
   </head>
 
-  <body class="font-primary">
+  <body class="font-primary overflow-hidden">
     <main class="h-screen">
       <section
         class="section--tracker relative h-2/6 bg-gray-600 bg-pattern-desktop bg-cover flex justify-center pt-8"
       >
-        <div class="text-center flex flex-col gap-8">
-          <h1 class="text-white text-3xl font-medium">IP Address Tracker</h1>
+        <div
+          class="text-center flex flex-col lg:gap-8 gap-2 -mt-3 lg:mt-0 w-4/5 lg:w-fit"
+        >
+          <h1 class="text-white lg:text-3xl text-2xl font-medium">
+            IP Address Tracker
+          </h1>
 
-          <div class="overflow-hidden relative search">
+          <form class="overflow-hidden relative w-full search">
+            <p
+              class="error-message absolute bottom-0 right-20 text-right italic text-red-500 hidden"
+            >
+              Invalid input
+            </p>
             <input
               type="text"
               placeholder="Search for any IP address or domain"
-              class="search-field px-6 py-4 w-input rounded-xl text-lg overflow-hidden outline-none text-very-dark-gray"
+              class="search-field px-6 py-4 lg:w-input w-full rounded-xl text-lg overflow-hidden outline-none text-very-dark-gray"
             />
             <button
               class="search--button h-full absolute right-0 py-4 px-6 bg-black hover:bg-very-dark-gray duration-200 rounded-r-xl"
             >
               <img src="images/icon-arrow.svg" alt="icon arrow" />
             </button>
-          </div>
+          </form>
         </div>
 
         <div
-          class="absolute details--container -bottom-1/4 p-8 w-5/6 max-w-8xl rounded-3xl shadow-xl bg-white grid grid-cols-4 gap-4 z-10"
+          class="absolute details--container -bottom-0 translate-y-1/2 lg:p-8 p-6 w-5/6 max-w-8xl rounded-3xl shadow-xl bg-white grid lg:grid-cols-4 text-center lg:text-left lg:gap-4 gap-2 z-10"
         >
           <!-- <div
             class="detail--ip-address border-r border-dark-gray flex flex-col flex-wrap"

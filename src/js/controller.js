@@ -5,7 +5,6 @@ import search from "./view/searchView.js";
 
 const updateMap = async function (ip) {
   await model.loadMap(ip);
-  console.log(model.state.map);
 
   // create details
   details.render(model.state.map);
@@ -29,11 +28,11 @@ const loadMap = async function () {
 
 const searchMap = async function () {
   try {
+    search.clearRenderError();
     // 1) take ip address
     const ipAddress = search.getQuery();
 
     await model.loadMap(ipAddress);
-    console.log(model.state.map);
 
     // create details
     details.render(model.state.map);
@@ -41,7 +40,7 @@ const searchMap = async function () {
     // 3) move map
     map.moveMap(model.state.map.location.lat, model.state.map.location.lng);
   } catch (err) {
-    console.error(err);
+    search.renderError();
   }
 };
 
