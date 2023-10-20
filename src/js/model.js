@@ -30,6 +30,12 @@ export const loadMap = async function (ip) {
   try {
     // Data
     const response = await fetch(`${API_URL}${API_KEY}&ipAddress=${ip}`);
+
+    if (!response.ok) {
+      alert("the search is invalid");
+      return;
+    }
+
     const data = await response.json();
 
     // console.log(data);

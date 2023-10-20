@@ -1,7 +1,7 @@
-import map from "./view/map.js";
+import map from "./view/mapView.js";
 import * as model from "./model.js";
-import details from "./view/details.js";
-import search from "./view/search.js";
+import details from "./view/detailsView.js";
+import search from "./view/searchView.js";
 
 const updateMap = async function (ip) {
   await model.loadMap(ip);
@@ -16,7 +16,7 @@ const updateMap = async function (ip) {
 
 const loadMap = async function () {
   try {
-    // IP Address
+    // IP Address on the initial page load
     const response = await fetch("https://api.ipify.org?format=json");
     const data = await response.json();
 
