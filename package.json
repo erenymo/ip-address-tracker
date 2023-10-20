@@ -2,9 +2,9 @@
   "name": "ip-address-tracker",
   "version": "1.0.0",
   "description": "ip adress tracker",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir ./dist"
   },
   "author": "Erenymo",
   "license": "ISC",
