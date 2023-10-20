@@ -16,6 +16,19 @@
       rel="stylesheet"
     />
 
+    <!-- Leaflet.js Library -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
     <!-- Javascript -->
     <script type="module" defer src="js/controller.js"></script>
   </head>
@@ -28,11 +41,11 @@
         <div class="text-center flex flex-col gap-8">
           <h1 class="text-white text-3xl font-medium">IP Address Tracker</h1>
 
-          <div class="overflow-hidden relative">
+          <div class="overflow-hidden relative search">
             <input
               type="text"
               placeholder="Search for any IP address or domain"
-              class="px-6 py-4 w-input rounded-xl text-lg overflow-hidden outline-none text-very-dark-gray"
+              class="search-field px-6 py-4 w-input rounded-xl text-lg overflow-hidden outline-none text-very-dark-gray"
             />
             <button
               class="search--button h-full absolute right-0 py-4 px-6 bg-black hover:bg-very-dark-gray duration-200 rounded-r-xl"
@@ -43,9 +56,9 @@
         </div>
 
         <div
-          class="absolute -bottom-1/4 p-8 w-5/6 max-w-8xl rounded-3xl shadow-xl bg-white details--container grid grid-cols-4 gap-4"
+          class="absolute details--container -bottom-1/4 p-8 w-5/6 max-w-8xl rounded-3xl shadow-xl bg-white grid grid-cols-4 gap-4 z-10"
         >
-          <div
+          <!-- <div
             class="detail--ip-address border-r border-dark-gray flex flex-col flex-wrap"
           >
             <h4 class="text-dark-gray tracking-wider text-sm font-bold mb-2">
@@ -86,10 +99,18 @@
             <span class="text-very-dark-gray text-3xl font-bold"
               >SpaceX Starlink</span
             >
-          </div>
+          </div> -->
         </div>
       </section>
-      <section class="section--map h-4/6 bg-dark-gray"></section>
+      <!-- map -->
+      <section class="section--map h-4/6 bg-dark-gray relative">
+        <img
+          class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
+          src="images/icon-location.svg"
+          alt="location marker"
+        />
+        <div id="map" class="h-full w-full z-0"></div>
+      </section>
     </main>
   </body>
 </html>
